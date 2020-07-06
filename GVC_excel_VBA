@@ -1,0 +1,47 @@
+Sub F列整理成1列()
+    Dim i%, j%
+    For i = 1 To 2551
+    For j = 1 To 65
+    Cells(i + 1, j * 6 + 2480) = Cells(i + 1, j * 6 + 2480) + Cells(i + 1, j * 6 + 2481) + Cells(i + 1, j * 6 + 2482) + Cells(i + 1, j * 6 + 2483) _
+    + Cells(i + 1, j * 6 + 2484) + Cells(i + 1, j * 6 + 2485)
+    Next
+    Next
+    Dim k%
+    For k = 1 To 65
+    Columns(2881 - k * 6).Delete
+    Columns(2880 - k * 6).Delete
+    Columns(2879 - k * 6).Delete
+    Columns(2878 - k * 6).Delete
+    Columns(2877 - k * 6).Delete
+    Next
+End Sub
+Sub 中国和墨西哥出口加工以外的活动及出口加工行合并()
+    Dim i%, j%
+    For i = 1 To 2550
+    For j = 1 To 36
+    Cells(793 + j, i + 1) = Cells(793 + j, i + 1) + Cells(2341 + j, i + 1) + Cells(2377 + j, i + 1)
+    Next
+    Next
+    Dim k%, l%
+    For k = 1 To 2550
+    For l = 1 To 36
+    Cells(l + 1477, k + 1) = Cells(l + 1477, k + 1) + Cells(l + 2413, k + 1) + Cells(l + 2449, k + 1)
+    Next
+    Next
+    Rows("2342:2485").Delete
+End Sub
+Sub 中国和墨西哥出口加工以外的活动及出口加工列合并()
+    Dim i%, j%
+    For i = 1 To 2407
+    For j = 1 To 36
+    Cells(1 + i, 793 + j) = Cells(i + 1, 793 + j) + Cells(i + 1, 2341 + j) + Cells(i + 1, 2377 + j)
+    Next
+    Next
+    Dim k%, l%
+    For k = 1 To 2407
+    For l = 1 To 36
+    Cells(k + 1, l + 1477) = Cells(k + 1, l + 1477) + Cells(k + 1, 2413 + l) + Cells(k + 1, 2449 + l)
+    Next
+    Next
+    Range("CLB1:CQO2408").Delete
+End Sub
